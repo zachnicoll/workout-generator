@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styles from './App.css';
 
-class Button extends React.Component {
+export const Button = class Button extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -25,4 +26,24 @@ class Button extends React.Component {
     }
 }
 
-export default Button;
+export const Label = class Label extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+        
+        };
+    }
+    
+    render() {
+        return(
+            <div class="item">
+                <a href={this.props.link}>
+                    <p><b>{this.props.name}</b></p>
+                    <p>Type: {this.props.type}</p>
+                    <p>Target Muscle: {this.props.targetmuscle}</p>
+                    <p>Difficulty: {this.props.difficulty}</p>
+                </a>
+            </div>
+        );
+    }
+}

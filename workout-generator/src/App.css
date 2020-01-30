@@ -1,3 +1,52 @@
-div {
-    background-color: blueviolet;
+html, body {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    background-color: aliceblue;
+    padding: 2em;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.item {
+    padding: 0.5em;
+    border-radius: 1em;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: aliceblue;
+}
+
+.list {
+}
+
+button {
+    background-color: aliceblue;
+    position: relative;
+    margin: auto;
+    margin-bottom: 1em;
+    display: block;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1em;
+    border-radius: 6vh;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

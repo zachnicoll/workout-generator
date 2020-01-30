@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './App.js'
+import {Button, Label} from './App.js'
 import Workouts from './workouts.js';
 
 class View extends React.Component {
@@ -26,13 +26,15 @@ class View extends React.Component {
 
     render() {
         return(
-            <div>
-                <Button text="Generate Workout" func={this.Generate}></Button>
-                <ul>
-                    {this.state.workouts.map((workout) => (
-                        <li key={workout.name}>{workout.name}</li>
-                    ))}
-                </ul>
+            <div class="container">
+                <div>
+                    <Button text="Generate Workout" func={this.Generate}></Button>
+                    <div class="list">
+                        {this.state.workouts.map((workout) => (
+                            <Label key={workout.name} name={workout.name} link={workout.hyperlink} type={workout.type} targetmuscle={workout["target-muscle"]} difficulty={workout.difficulty}></Label>
+                        ))}
+                    </div>
+                </div>
             </div>
         );
     }
