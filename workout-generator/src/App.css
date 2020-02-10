@@ -1,52 +1,91 @@
-html, body {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-color: aliceblue;
-    font-family: 'Raleway', sans-serif;
+html,
+body {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: aliceblue;
+  font-family: "Raleway", sans-serif;
 }
 
 .container {
-    background-color: aliceblue;
-    padding: 2em;
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: block;
-    text-align: center;
+  background-color: aliceblue;
+  padding: 2em;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  text-align: center;
 }
 
 .item {
-    padding: 0.5em;
-    border-radius: 1em;
-    width: 50%;
-    margin: auto;
-    margin-bottom: 2em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: aliceblue;
+  padding: 0.5em;
+  border-radius: 1em;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: aliceblue;
 }
 
 .list {
+  width: 50%;
+  margin: auto;
+  background-color: rgba(240, 248, 255, 0.781);
+  padding: 1em;
+  border: none;
+  border-radius: 2em;
+  overflow: auto;
+  height: 40em;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.list::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 1em;
+  height: 35em;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 1em;
 }
 
 button {
-    background-color: aliceblue;
-    position: relative;
-    margin: auto;
-    margin-bottom: 1em;
-    display: block;
-    border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 1em;
-    border-radius: 6vh;
-    font-family: 'Raleway', sans-serif;
-    font-size: 40px;
-    font-weight: 400;
+  background-color: aliceblue;
+  position: relative;
+  margin: auto;
+  margin-bottom: 1em;
+  display: block;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1em;
+  border-radius: 6vh;
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+
+button:active {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
+}
+
+hr {
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+#simpleForm {
 }
