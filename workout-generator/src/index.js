@@ -1,58 +1,100 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+// Import custom components from App.js
 import { Button, Label, Form } from "./App.js";
+
+// Import workout database from workouts.js
 import Workouts from "./workouts.js";
 
+// Main View rendered to the webpage
 class View extends React.Component {
   constructor(props) {
     super(props);
+    // Store currently shown workouts, number of desired exercises,
+    // and selected types of exercises in the state
     this.state = {
       workouts: [],
       numExercises: 0,
-      typeExercise: "Upper Body"
+      options: []
+      //typeExercise: "Upper Body"
     };
   }
 
-  setNum = (num) => {
-    this.setState({ numExercises: num }, function(){
+  // Function for setting the number of desired exercises
+  setNum = num => {
+    this.setState({ numExercises: num }, function() {
       console.log(this.state.numExercises);
     });
   };
 
-  setType = (type) => {
-    this.setState({ typeExercise: type }, function(){
-      console.log(this.state.typeExercise);
+  addOption = options => {
+    let opts = this.state.options;
+    for (let option of options) {
+      opts.push(option);
+    }
+    this.setState({ options: opts }, function() {
+      console.log(this.state.options);
     });
   };
 
+  removeOption = options => {
+    let opts = this.state.options;
+    for (let option of options) {
+      if (opts.includes(option)) {
+        opts.splice(opts.indexOf(option), 1);
+      }
+    }
+    this.setState({ options: opts }, function() {
+      console.log(this.state.options);
+    });
+  };
+
+  setOption = options => {
+    this.setState({ options: [] });
+    let opts = options;
+    this.setState({ options: opts }, function() {
+      console.log(this.state.options);
+    });
+  };
+
+  // Function for picking random exercises
   Generate = clicked => {
-    if (clicked === true) {
+    if (clicked === true && this.state.options.length > 0) {
       var addition = [];
       var len = Workouts.length;
-      console.log("Length of Workouts Array: ", len);
       var rndIndex = 0;
       var count = parseInt(this.state.numExercises);
-      while(count > 0){
+
+      while (count > 0) {
         rndIndex = Math.floor(Math.random() * len);
-        console.log(rndIndex);
-        if(Workouts[rndIndex].type === this.state.typeExercise && !addition.includes(Workouts[rndIndex])){
+        if (
+          this.state.options.includes(Workouts[rndIndex]["target-muscle"]) &&
+          !addition.includes(Workouts[rndIndex])
+        ) {
           count--;
           addition.push(Workouts[rndIndex]);
         }
       }
-      console.log(addition);
+
       this.setState({ workouts: addition });
     } else {
       return <br></br>;
     }
   };
 
+  // Render exercises to the screen
   render() {
     return (
       <div class="container">
         <div>
           <Button text="Generate Workout" func={this.Generate}></Button>
-          <Form numFunc={this.setNum} typeFunc={this.setType}></Form>
+          <Form
+            addOptFunc={this.addOption}
+            removeOptFunc={this.removeOption}
+            setOptFunc={this.setOption}
+            numFunc={this.setNum}
+          ></Form>
           <div class="list">
             {this.state.workouts.map(workout => (
               <Label

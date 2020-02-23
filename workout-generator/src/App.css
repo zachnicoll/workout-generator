@@ -5,12 +5,70 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: aliceblue;
-  font-family: "Raleway", sans-serif;
+  /*font-family: "Raleway", sans-serif;*/
+  font-family: "Questrial", sans-serif;
+  height: 100%;
+}
+
+input[type=text]{
+  border: none;
+  width: 5em;
+  margin: auto;
+  background-color: aliceblue;
+  box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.2);
+  border-radius: 1em;
+  font-family: "Questrial", sans-serif;
+  font-size: 18px;
+  padding: 2px;
+  text-indent: 0.5em;
+}
+
+select {
+  border: none;
+  width: 10em;
+  margin: auto;
+  background-color: aliceblue;
+  box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.2);
+  border-radius: 1em;
+  font-family: "Questrial", sans-serif;
+  font-size: 18px;
+  padding: 2px;
+  text-align: center;
+  text-align-last: center;
+  -moz-text-align-last: center;
+}
+
+.form {
+  text-align: left;
+  align-content: left;
+  width: 50%;
+  margin: auto;
+  height: 100px;
+  margin-bottom: 1em;
+}
+
+.form-content {
+  height: 90px;
+  margin-right: 0px;
+  float:left;
+  margin-bottom: 10px;
+}
+
+.form-content h1{
+  font-size: 20px;
+}
+
+.form-content p{
+  width: 100%;
+  word-wrap: normal;
+  font-size: 18px;
+  margin: 0px;
+  padding: 0.3em;
 }
 
 .container {
   background-color: aliceblue;
-  padding: 2em;
+  padding-top: 2em;
   margin: auto;
   height: 100%;
   width: 100%;
@@ -29,6 +87,16 @@ body {
   background-color: aliceblue;
 }
 
+.itemtitle {
+  text-align: center;
+  font-size: 20px;
+}
+
+.itemcontent {
+  text-align: left;
+  text-indent: 2em;
+}
+
 .list {
   width: 50%;
   margin: auto;
@@ -37,7 +105,7 @@ body {
   border: none;
   border-radius: 2em;
   overflow: auto;
-  height: 40em;
+  max-height: 38em;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -61,13 +129,14 @@ button {
   background-color: aliceblue;
   position: relative;
   margin: auto;
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
   display: block;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1em;
   border-radius: 6vh;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
+  font-family: "Questrial", sans-serif;
   font-size: 40px;
   font-weight: 400;
 }
